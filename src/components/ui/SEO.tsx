@@ -12,13 +12,13 @@ export default function SEO() {
             "@type": "Person",
             name: "Paul Fournier",
             url: "https://paul-fournier.dev",
-            jobTitle: "Développeur Web et DevOps",
+            jobTitle: "Développeur Web full-stack",
             // image: "https://paul-fournier.dev/images/preview-projects/paul-fournier-portfolio.webp",
             sameAs: [
               "https://github.com/paulfournier",
               "https://linkedin.com/in/paul-fournier-dev"
             ],
-            description: "Je suis développeur Full Stack et DevOps passionné, actuellement à la recherche d'une nouvelle opportunité.",
+            description: "Je suis développeur Full Stack passionné, actuellement à la recherche d'une nouvelle opportunité.",
             jobSeekerProfile: {
               "@type": "JobPosting",
               title: "Développeur Web / DevOps",
