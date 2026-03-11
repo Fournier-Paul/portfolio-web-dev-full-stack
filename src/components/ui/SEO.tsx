@@ -12,19 +12,13 @@ export default function SEO() {
             "@type": "Person",
             name: "Paul Fournier",
             url: "https://paul-fournier.dev",
-            jobTitle: "Développeur Web full-stack",
-            // image: "https://paul-fournier.dev/images/preview-projects/paul-fournier-portfolio.webp",
+            jobTitle: "Développeur web full-stack",
             sameAs: [
               "https://github.com/paulfournier",
               "https://linkedin.com/in/paul-fournier-dev"
             ],
-            description: "Je suis développeur Full Stack passionné, actuellement à la recherche d'une nouvelle opportunité.",
-            jobSeekerProfile: {
-              "@type": "JobPosting",
-              title: "Développeur Web / DevOps",
-              description: "Développeur full stack avec expertise CI/CD, Docker, React, Next.js, Ansible et plus. Disponible immédiatement.",
-              employmentType: "FULL_TIME"
-            }
+            description:
+              "Développeur web full-stack spécialisé dans l’écosystème Vue.js, avec expérience sur des projets web en production. J’interviens sur le développement, la maintenance, les mises en production, la résolution d’incidents et l’évolution continue de projets web."
           })
         }}
       />
