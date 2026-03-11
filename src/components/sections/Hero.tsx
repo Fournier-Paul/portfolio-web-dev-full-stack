@@ -24,7 +24,7 @@ export default function Hero() {
       >
       <SectionTitle as="h1">Paul Fournier</SectionTitle>
 
-        <SectionDescription>Full Stack Developer / DevOps</SectionDescription>
+        <SectionDescription>Développeur Web Full Stack</SectionDescription>
 
         <div className="mt-6 flex justify-center gap-6">
           <a

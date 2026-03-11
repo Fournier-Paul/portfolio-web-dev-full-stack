@@ -4,15 +4,15 @@ import { useEffect, useState, useRef } from 'react'
 
 const lines = [
   { prefix: '~ echo $CURRENTLY', delay: 0, type: 'command' },
-  { text: 'Recherche d\'un poste de Développeur Web / DevOps', delay: 1500, type: 'output' },
+  { text: 'Recherche d\'un poste de Développeur Web Full Stack', delay: 1500, type: 'output' },
   { prefix: '~ echo $PREVIOUSLY', delay: 3000, type: 'command' },
-  { text: 'Chargé du Web & DevOps chez PULSAGENCY', delay: 4500, type: 'output' },
+  { text: 'Chargé du Web chez PULSAGENCY', delay: 4500, type: 'output' },
 ]
 
 const commandResponses: Record<string, string> = {
   help: 'Commandes disponibles : about, skills, experience, contact, clear',
-  about: "Je conçois des sites et applications web, ainsi que des solutions DevOps faciles à déployer, maintenir et faire évoluer.",
-  skills: 'DevOps: Docker, CI/CD, Terraform | Web: Nuxt.js, React, Node.js | Cloud: Digital Ocean, AWS',
+  about: "Développeur web full-stack spécialisé dans l’écosystème Vue.js. J’évolue depuis 2021 sur un parc d’une trentaine de sites en production. J’interviens sur le développement, la maintenance, les mises en production, la résolution d’incidents et l’évolution continue de projets web. Mon expérience m’a amené à travailler dans des environnements variés, avec une attention particulière portée à la fiabilité, à la qualité du code et à la continuité de service.",
+  skills: 'Front-end : Vue.js, Nuxt.js, JavaScript | Back-end : PHP, Symfony | Outils : Git, GitHub, Docker, Jenkins, DigitalOcean',
   contact: '📧 contact@paul-fournier.dev | 🔗 github.com/paulfournier | LinkedIn: linkedin.com/paul-fournier-dev/',
   cv: '📄 Télécharger le CV : https://paul-fournier.dev/cv.pdf',
   ls: 'about  skills  contact  projects  cv',

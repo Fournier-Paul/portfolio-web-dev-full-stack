@@ -27,7 +27,7 @@ export default function Footer() {
         <span className="text-muted-foreground select-none">·</span>
 
         <a
-          href="https://github.com/Fournier-Paul/portfolio-web-dev-devops"
+          href="https://github.com/Fournier-Paul/portfolio-web-dev-full-stack"
           target="_blank"
           rel="noopener noreferrer"
           className="group inline-flex items-center gap-1 hover:text-primary transition-colors duration-1000"
