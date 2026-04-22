@@ -28,7 +28,7 @@ export default function Hero() {
 
         <div className="mt-6 flex justify-center gap-6">
           <a
-            href="https://github.com/paulfournier"
+            href="https://github.com/Fournier-Paul/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
