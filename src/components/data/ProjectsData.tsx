@@ -13,74 +13,77 @@ export type Project = {
 }
 
 
-export const projects: Project[] = [{
-		title: "Projet d'infrastructure locale domestique",
-		category: "Infra",
-		description: "Stack domestique hébergée sur un Raspberry Pi 5 avec services conteneurisés via Docker.",
-		githubLink: "https://github.com/Fournier-Paul/home-lab",
-		longDescription: `### 🏡 Contexte
+export const projects: Project[] = [
 
-Cette infrastructure personnelle repose sur un **Raspberry Pi 5** équipé d’un **SSD NVMe**, avec tous les services gérés par **Docker**.
+	{
+	title: "Projet d'infrastructure locale",
+	category: "Infra",
+	description: "Stack domotique et services personnels hébergés sur Raspberry Pi 5 avec Docker Swarm.",
+	githubLink: "https://github.com/Fournier-Paul/home-lab",
+	longDescription: `### 🏡 Contexte
 
-> Objectif : centraliser et automatiser la gestion domotique et numérique à domicile.
+	Cette infrastructure personnelle repose sur un **Raspberry Pi 5** équipé d’un **SSD NVMe**, avec des services conteneurisés et orchestrés via **Docker Swarm**.
 
-Une migration vers un **cluster K3s** est en cours pour améliorer :
-- 🔄 stabilité
-- 📈 montée en charge
-- 🧱 isolation des services
-- 🚀 montée en compétence DevOps personnelle
+	> Objectif : centraliser, automatiser et superviser les services numériques et domotiques de mon environnement personnel.
+
+	Cette stack me permet de mettre en pratique plusieurs compétences DevOps :
+	- 🐳 conteneurisation avec Docker
+	- 🧱 orchestration avec Docker Swarm
+	- 🔄 gestion et redémarrage automatique des services
+	- 📡 communication entre services via MQTT
+	- 📊 supervision avec Prometheus et Grafana
+	- 🏡 automatisation domotique avec Home Assistant
 
 
-### 🧩 Services hébergés
+	### 🧩 Services hébergés
 
-#### 🔌 Domotique & capteurs
-- Jeedom (pilotage maison)
-- Zigbee2MQTT
-- Mosquitto (MQTT)
+	#### 🏡 Domotique & capteurs
+	- Home Assistant
+	- Zigbee2MQTT
+	- Mosquitto (MQTT)
 
-#### ☁️ Cloud & communication
-- Nextcloud (fichiers, agenda, contacts)
-- Serveur mail personnel
+	#### ☁️ Cloud & communication
+	- Nextcloud (fichiers, agenda, contacts)
+	- Serveur mail personnel
 
-#### 💡 Interface & visualisation
-- Sites web
-- Assistant vocal
-- Monitoring (Prometheus, Grafana)
+	#### 💡 Interface & visualisation
+	- Sites web
+	- Assistant vocal
+	- Monitoring avec Prometheus et Grafana
 
-#### 🧪 Autres services
-- Impressions 3D
-- Outils internes et expérimentaux`,
-		image: "/images/projects/preview-projects/raspberry.webp",
-		technologies: [
-			"Raspberry Pi 5",
-			"SSD NVMe",
-			"Docker",
-			"K3s",
-			"Jeedom",
-			"Zigbee2MQTT",
-			"Mosquitto",
-			"MQTT",
-			"Nextcloud",
-			"Serveur mail API",
-			"Vue.js",
-			"Assistant vocal",
-			"Prometheus",
-			"Grafana",
-			"Impressions 3D"
-		],
-		gallery: [{
-				src: "/images/projects/infra-local/Blank diagram (1).webp",
-				caption: "Diagramme d'infrastructure locale"
-			},
-			{
-				src: "/images/projects/infra-local/Blank diagram (2).webp",
-				caption: "Services dockerisé"
-			}
-		]
+	#### 🧪 Autres services
+	- Services internes
+	- Outils expérimentaux
+	- Projets liés à l’impression 3D`,
+	image: "/images/projects/preview-projects/raspberry.webp",
+	technologies: [
+		"Raspberry Pi 5",
+		"SSD NVMe",
+		"Docker",
+		"Docker Swarm",
+		"Home Assistant",
+		"Zigbee2MQTT",
+		"Mosquitto",
+		"MQTT",
+		"Nextcloud",
+		"Serveur mail",
+		"Vue.js",
+		"Assistant vocal",
+		"Prometheus",
+		"Grafana",
+		"Impression 3D"
+	],
+	gallery: [
+		{
+		src: "/images/projects/infra-local/Blank diagram (1).webp",
+		caption: "Diagramme d'infrastructure locale"
+		},
+		{
+		src: "/images/projects/infra-local/Blank diagram (2).webp",
+		caption: "Services dockerisés"
+		}
+	]
 	},
-
-
-
 
 	{
 		title: "Site du Championnat de France de Drift FFSA",
