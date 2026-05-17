@@ -16,73 +16,147 @@ export type Project = {
 export const projects: Project[] = [
 
 	{
-	title: "Projet d'infrastructure locale",
-	category: "Infra",
-	description: "Stack domotique et services personnels hébergés sur Raspberry Pi 5 avec Docker Swarm.",
-	githubLink: "https://github.com/Fournier-Paul/home-lab",
-	longDescription: `### 🏡 Contexte
+		title: "Projet d'infrastructure locale",
+		category: "Infra",
+		description: "Stack domotique et services personnels hébergés sur Raspberry Pi 5 avec Docker Swarm.",
+		githubLink: "https://github.com/Fournier-Paul/home-lab",
+		longDescription: `### 🏡 Contexte
 
-	Cette infrastructure personnelle repose sur un **Raspberry Pi 5** équipé d’un **SSD NVMe**, avec des services conteneurisés et orchestrés via **Docker Swarm**.
+		Cette infrastructure personnelle repose sur un **Raspberry Pi 5** équipé d’un **SSD NVMe**,
+		 avec des services conteneurisés et orchestrés via **Docker Swarm**.
 
-	> Objectif : centraliser, automatiser et superviser les services numériques et domotiques de mon environnement personnel.
+		> Objectif : centraliser, automatiser et superviser les services numériques 
+		 et domotiques de mon environnement local.
 
-	Cette stack me permet de mettre en pratique plusieurs compétences DevOps :
-	- 🐳 conteneurisation avec Docker
-	- 🧱 orchestration avec Docker Swarm
-	- 🔄 gestion et redémarrage automatique des services
-	- 📡 communication entre services via MQTT
-	- 📊 supervision avec Prometheus et Grafana
-	- 🏡 automatisation domotique avec Home Assistant
+		Cette stack me permet de mettre en pratique plusieurs compétences DevOps :
+		- 🐳 conteneurisation avec Docker
+		- 🧱 orchestration avec Docker Swarm
+		- 🔄 gestion et redémarrage automatique des services
+		- 📡 communication entre services via MQTT
+		- 📊 supervision avec Prometheus et Grafana
+		- 🏡 automatisation domotique avec Home Assistant
 
 
-	### 🧩 Services hébergés
+### 🧩 Services hébergés
 
-	#### 🏡 Domotique & capteurs
-	- Home Assistant
-	- Zigbee2MQTT
-	- Mosquitto (MQTT)
+#### 🏡 Domotique & capteurs
+		- Home Assistant
+		- Zigbee2MQTT
+		- Mosquitto (MQTT)
 
-	#### ☁️ Cloud & communication
-	- Nextcloud (fichiers, agenda, contacts)
-	- Serveur mail personnel
+#### ☁️ Cloud & communication
+		- Nextcloud (fichiers, agenda, contacts)
+		- Serveur mail personnel
 
-	#### 💡 Interface & visualisation
-	- Sites web
-	- Assistant vocal
-	- Monitoring avec Prometheus et Grafana
+#### 💡 Interface & visualisation
+		- Sites web
+		- Assistant vocal
+		- Monitoring avec Prometheus et Grafana
 
-	#### 🧪 Autres services
-	- Services internes
-	- Outils expérimentaux
-	- Projets liés à l’impression 3D`,
-	image: "/images/projects/preview-projects/raspberry.webp",
-	technologies: [
-		"Raspberry Pi 5",
-		"SSD NVMe",
-		"Docker",
-		"Docker Swarm",
-		"Home Assistant",
-		"Zigbee2MQTT",
-		"Mosquitto",
-		"MQTT",
-		"Nextcloud",
-		"Serveur mail",
-		"Vue.js",
-		"Assistant vocal",
-		"Prometheus",
-		"Grafana",
-		"Impression 3D"
-	],
-	gallery: [
-		{
-		src: "/images/projects/infra-local/Blank diagram (1).webp",
-		caption: "Diagramme d'infrastructure locale"
-		},
-		{
-		src: "/images/projects/infra-local/Blank diagram (2).webp",
-		caption: "Services dockerisés"
-		}
-	]
+#### 🧪 Autres services
+		- Services internes
+		- Outils expérimentaux
+		- Projets liés à l’impression 3D`,
+		image: "/images/projects/preview-projects/raspberry.webp",
+		technologies: [
+			"Raspberry Pi 5",
+			"SSD NVMe",
+			"Docker",
+			"Docker Swarm",
+			"Home Assistant",
+			"Zigbee2MQTT",
+			"Mosquitto",
+			"MQTT",
+			"Nextcloud",
+			"Serveur mail",
+			"Vue.js",
+			"Assistant vocal",
+			"Prometheus",
+			"Grafana",
+			"Impression 3D"
+		],
+		gallery: [
+			{
+			src: "/images/projects/infra-local/Blank diagram (1).webp",
+			caption: "Diagramme d'infrastructure locale"
+			},
+			{
+			src: "/images/projects/infra-local/Blank diagram (2).webp",
+			caption: "Services dockerisés"
+			}
+		]
+	},
+	{
+		title: "OpenClaw sur Raspberry Pi avec Docker Swarm",
+		category: ["Infra", "Automatisation"],
+		description: "Déploiement self-hosted d’OpenClaw sur Raspberry Pi avec Docker Swarm, navigateur distant et intégration Gemini.",
+		githubLink: "https://github.com/Fournier-Paul/openclaw-rpi-swarm",
+		longDescription: `### 🤖 Contexte
+
+		Ce projet consiste à déployer **OpenClaw** sur un **Raspberry Pi** avec **Docker Swarm**, 
+		dans une logique de self-hosting et d’expérimentation DevOps.
+
+		> Objectif : disposer d’un environnement local reproductible pour exécuter OpenClaw avec un navigateur
+		  distant, un accès réseau local et une configuration sécurisée par variables d’environnement.
+
+		Le projet met en avant plusieurs compétences :
+		- 🐳 conteneurisation avec Docker
+		- 🧱 orchestration avec Docker Swarm
+		- 🌐 accès distant depuis le réseau local
+		- 🧠 intégration avec l’API Gemini
+		- 🔐 gestion des secrets via variables d’environnement
+		- 💾 persistance des données de configuration et de workspace
+
+
+### 🧩 Architecture
+
+		L’infrastructure repose sur deux services principaux :
+
+#### 🚪 OpenClaw Gateway
+		- Expose l’interface web
+		- Gère la passerelle WebSocket
+		- Centralise l’accès à OpenClaw
+
+#### 🌐 Browser service
+		- Fournit le navigateur distant utilisé par OpenClaw
+		- Communique avec le gateway via un réseau Docker overlay
+
+		Les services utilisent :
+		- un réseau overlay Docker
+		- des bind mounts pour persister la configuration
+		- des variables d’environnement pour adapter le déploiement
+		- une authentification HTTP Basic optionnelle
+
+
+### 🛠️ Problèmes résolus
+
+		Pendant la mise en place, plusieurs points techniques ont été traités :
+		- résolution réseau entre services Docker
+		- exposition correcte du gateway sur le LAN
+		- correction des erreurs d’origine non autorisée
+		- configuration des \`allowedOrigins\` et \`trustedProxies\`
+		- accès distant depuis une autre machine du réseau local
+
+
+### ✅ Résultat
+
+		Le projet fournit une stack versionnée, reproductible et adaptée à un environnement homelab, 
+		avec un déploiement local fonctionnel d’OpenClaw sur Raspberry Pi.`,
+		image: "/images/projects/preview-projects/openclaw.webp",
+		technologies: [
+			"Raspberry Pi",
+			"Docker",
+			"Docker Swarm",
+			"OpenClaw",
+			"OpenClaw Gateway",
+			"OpenClaw Browser",
+			"Gemini API",
+			"Docker overlay network",
+			"Self-hosting",
+			"LAN access",
+			"HTTP Basic Auth",
+			"Bind mounts"
+		]
 	},
 
 	{
