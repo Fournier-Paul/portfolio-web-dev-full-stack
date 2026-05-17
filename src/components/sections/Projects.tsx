@@ -75,7 +75,7 @@ export default function ProjectGallery() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
               transition={{ duration: 0.2, ease: 'easeOut' }}
-              className="group bg-[var(--card-bg)] rounded-lg shadow-lg overflow-hidden flex flex-col hover:shadow-2xl transition-shadow duration-1000 border border-transparent hover:border-[var(--highlight)] hover:scale-[1.02] ease-in-out"
+              className="group bg-[var(--card-bg)] rounded-lg shadow-lg overflow-hidden flex flex-col hover:shadow-2xl transition-shadow duration-1500 border border-transparent hover:border-[var(--highlight)] hover:scale-[1.02] ease-in-out"
               onClick={() => setOpenProjectIndex(index)}
             >
               <div className="relative h-48 w-full overflow-hidden">
@@ -93,24 +93,61 @@ export default function ProjectGallery() {
                   <h3 className="text-lg font-bold text-[var(--text-main)]">{project.title}</h3>
                   <p className="text-sm text-[var(--text-main)]">{project.description}</p>
                 </div>
-                <div className="flex flex-wrap gap-2 mt-3 items-center">
-                  {project.technologies?.slice(0, 4).map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="text-xs bg-[var(--highlight)]/20 text-[var(--highlight)] px-2 py-0.5 rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {project.technologies?.length > 4 && (
+
+                <div className="mt-5 flex flex-col gap-4">
+                  <div className="flex flex-wrap gap-2 items-center">
+                    {project.technologies?.slice(0, 4).map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="text-xs bg-[var(--highlight)]/20 text-[var(--highlight)] px-2 py-0.5 rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+
+                    {project.technologies?.length > 4 && (
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          setOpenProjectIndex(index)
+                        }}
+                        className="text-xs bg-[var(--highlight)]/10 text-[var(--highlight)] px-2 py-0.5 rounded-full hover:bg-[var(--highlight)]/20 transition cursor-pointer"
+                        title={`Voir ${project.technologies.length - 4} autres technologies`}
+                      >
+                        +{project.technologies.length - 4} autres
+                      </button>
+                    )}
+                  </div>
+
+                  <div className="flex flex-wrap gap-3 pt-1">
                     <button
-                      onClick={() => setOpenProjectIndex(index)}
-                      className="text-xs bg-[var(--highlight)]/10 text-[var(--highlight)] px-2 py-0.5 rounded-full hover:bg-[var(--highlight)]/20 transition cursor-pointer"
-                      title={`Voir ${project.technologies.length - 4} autres technologies`}
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setOpenProjectIndex(index)
+                      }}
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--highlight)] px-4 py-2 text-sm font-medium text-white transition hover:scale-[1.03] hover:bg-[var(--highlight)]/90 focus:outline-none focus:ring-2 focus:ring-[var(--highlight)] focus:ring-offset-2 focus:ring-offset-[var(--card-bg)]"
+                      aria-label={`Voir les détails du projet ${project.title}`}
                     >
-                      +{project.technologies.length - 4} autres
+                      <span>Plus de détails</span>
+                      <ChevronRight size={16} className="shrink-0" />
                     </button>
-                  )}
+
+                    {project.externalLink && (
+                      <a
+                        href={project.externalLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--highlight)] px-4 py-2 text-sm font-medium text-[var(--highlight)] transition hover:bg-[var(--highlight)] hover:text-white focus:outline-none focus:ring-2 focus:ring-[var(--highlight)] focus:ring-offset-2 focus:ring-offset-[var(--card-bg)]"
+                        aria-label={`Voir le site du projet ${project.title}`}
+                      >
+                        <span>Voir le site</span>
+                        <ExternalLink size={16} className="shrink-0" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </motion.div>
